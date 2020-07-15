@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ContosoUniversity.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <nav id="toolbox" class="navbar-primary" position: fixed;">
+        <ul id="nav" class="navbar-primary-menu">
+            <li style="padding: 6px 12px; border-bottom:dotted; border-width:thin ;border-color:white">
+                <h2 style="color:white">Tools</h2>
+            </li>
+            <li class="itemnav">
+                <a href="#" onclick="location.href='@Url.Action("Create", "Student")'">Create New</a>
+            </li>
+        </ul>
+    </nav>
+
+<div class="smallbody">
+        <h2>Index</h2>
+
+        <div class="smalltable">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstMidName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Birthday)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RegistrationNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Enrollments)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstMidName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Birthday)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RegistrationNumber)
+                        </td>
+                        <td>
+                            <table class="table">
+                                <tr>
+                                    <th>Course Title</th>
+                                    <th>Grade</th>
+                                </tr>
+                                @foreach (var item2 in item.Enrollments)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item2.Subject.Title)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item2.Grade)
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>

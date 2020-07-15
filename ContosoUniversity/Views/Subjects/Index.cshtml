@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ContosoUniversity.Models.Subject>
+
+@{
+    ViewBag.Title = "Index";
+}
+<nav id="toolbox" class="navbar-primary" position: fixed;">
+    <ul id="nav" class="navbar-primary-menu">
+        <li style="padding: 6px 12px; border-bottom:dotted; border-width:thin ;border-color:white">
+            <h2 style="color:white">Tools</h2>
+        </li>
+        <li class="itemnav">
+            <a href="#" onclick="location.href='@Url.Action("Create", "Subjects")'">Create New</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="smallbody">
+    <h2>Index</h2>
+
+
+    <div class="smalltable">
+        <table class="table">
+            <tr>
+                <th>
+                    Teacher
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Credits)
+                </th>
+                <th>
+                    Students
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Teacher.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Credits)
+                    </td>
+                    <td>
+                        <table class="table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Grade</th>
+                            </tr>
+                            @foreach (var item2 in item.Enrollments)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.Student.FirstMidName)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item2.Grade)
+                                    </td>
+
+                                </tr>
+                            }
+                        </table>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SubjectID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SubjectID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

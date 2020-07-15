@@ -1,0 +1,118 @@
+﻿body {
+}
+
+th {
+    background-color:beige
+}
+
+th th {
+    background-color:burlywood!important
+
+}
+
+td
+{
+    vertical-align:middle!important
+}
+
+.navbar-primary {
+    background-color: #333333;
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    top: 51px;
+    width: 11%;
+    z-index: 4;
+    overflow: hidden;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.navbar-primary.collapsed {
+    width: 60px;
+}
+
+    .navbar-primary.collapsed .glyphicon {
+        font-size: 22px;
+    }
+
+    .navbar-primary.collapsed .nav-label {
+        display: none;
+    }
+
+.smallbody {
+    margin-left: 11%;
+    margin-right: -5%;
+    padding-left: 1.69%;
+    padding-right: 6%;
+    padding-top: 1%;
+}
+
+.smalltable {
+    overflow-y: scroll;
+    height: 700px;
+    margin-top: 2%;
+}
+
+nav > ul > li.itemnav {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-bottom: dotted;
+    border-width: thin;
+    border-color: white;
+}
+
+nav > ul > li.itemnavbot {
+}
+
+nav > ul > li.itemnav:hover {
+    background-color: #F84018;
+}
+
+h1 {
+    text-shadow: 2px 2px black;
+}
+
+li h2 {
+    margin-top: 6%;
+}
+
+.navbar-primary-menu,
+.navbar-primary-menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .navbar-primary-menu li a {
+        display: block;
+        padding: 6px 12px;
+        text-align: left;
+        color: white;
+    }
+
+        /*.navbar-primary-menu li a .glyphicon {
+        color: #f84018;
+    }*/
+
+        .navbar-primary-menu li a:hover {
+            background-color: #000;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar-primary-menu li a .glyphicon {
+            margin-right: 6px;
+        }
+
+        .navbar-primary-menu li a:hover .glyphicon {
+            color: black;
+            /*color: #f84018;*/
+        }
+
+        .navbar-primary-menu li a:hover {
+            background-color: #f84018 !important;
+            color: white;
+            text-decoration: none;
+        }
