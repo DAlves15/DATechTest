@@ -3,19 +3,11 @@
 @{
     ViewBag.Title = "Index";
 }
-    <nav id="toolbox" class="navbar-primary" position: fixed;">
-        <ul id="nav" class="navbar-primary-menu">
-            <li style="padding: 6px 12px; border-bottom:dotted; border-width:thin ;border-color:white">
-                <h2 style="color:white">Tools</h2>
-            </li>
-            <li class="itemnav">
-                <a href="#" onclick="location.href='@Url.Action("Create", "Student")'">Create New</a>
-            </li>
-        </ul>
-    </nav>
 
-<div class="smallbody">
+
+    <div class="smallbody">
         <h2>Index</h2>
+        <input type="button" value="Create Student" class="btn btn-secondary" onclick="location.href='@Url.Action("Create", "Student")'" />
 
         <div class="smalltable">
             <table class="table">
